@@ -70,19 +70,28 @@ h2 {
   background-color: #fff;
   width: 100px;
   height: 100px;
-
-  font-size: 3em;
+  font-size: 5em;
   transform: rotateY(180deg);
   transition: 0.25s;
-
 }
 
 .item::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
+
+  opacity: 0.5;
   background: #404040;
   transition: 0.25s;
   transform: rotateY(0deg);
   backface-visibility: hidden;
+}
+
+.item.boxOpen {
+  transform: rotateY(0deg);
+}
+
+.boxOpen::after,
+.boxMatch::after {
+  transform: rotateY(180deg);
 }
